@@ -7,7 +7,7 @@
 // @match        https://*.smartschool.be/login
 // @grant        none
 // ==/UserScript==
-
+alert('new changes have been made')
 function fillall() {
     const parentElement = document.querySelector('.login-app__form');
     const newDivElement = "<h2 id='resettext' style='color:#FF0000;margin:auto;'>Press the reset button to change login data (if wrong).</h2><button id='reset' style='margin: auto;'>Reset login data</button>";
