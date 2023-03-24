@@ -12,7 +12,7 @@ To install Tampermonkey, simply visit the following link and follow the instruct
 
 Once you have installed Tampermonkey, you can browse through the available plugins in this repository and install any that you find useful.
 
-![Tampermonkey Logo](Tampermonkey_logo.png)
+<img src="Tampermonkey_logo.png" alt="Tampermonkey Logo" width="100" height="100">
 
 ## Contributing
 
