@@ -14,7 +14,7 @@ Once you have installed Tampermonkey, you can browse through the available plugi
 
 <div style="pointer-events: none;">
   <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en">
-    <img src="/Tampermonkey_logo.png" alt="Tampermonkey Logo" width="100" height="100">
+    <img src="https://images.sftcdn.net/images/t_app-logo-xl,f_auto,dpr_2/p/a6fb70ec-ab0b-471f-adf4-d1110724a4db/1174036643/tampermonkey-icon.png" alt="Tampermonkey Logo" width="100" height="100">
   </a>
 </div>
 
