@@ -11,7 +11,7 @@ To install Tampermonkey, simply visit the following link and follow the instruct
 [Install tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
 
 Once you have installed Tampermonkey, you can browse through the available plugins in this repository and install any that you find useful. 
-# ![Logo](Tampermonkey_logo.png)
+(Tampermonkey_logo.png)
 
 ## Contributing
 
