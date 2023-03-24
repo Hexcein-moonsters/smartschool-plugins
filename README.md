@@ -6,7 +6,7 @@ Welcome to the Smartschool Plugins repository! This repository contains a collec
 
 Before you can use any of the plugins in this repository, you will need to install Tampermonkey, a popular userscript manager that runs on all major web browsers. Tampermonkey makes it easy to manage and install userscripts, including those found in this repository.
 
-To install Tampermonkey, simply visit the following link and follow the instructions provided:
+To install Tampermonkey, simply visit the following link.
 
 [Install Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
 <div style="pointer-events: none;">
