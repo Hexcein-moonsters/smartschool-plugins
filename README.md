@@ -20,9 +20,9 @@ Once you have installed Tampermonkey, you can browse through the available plugi
 
 ## Contributing
 
-If you have created a plugin for Smartschool that you would like to share, .
+If you have created a plugin for Smartschool that you would like to share, upload it to [MediaFire](https://app.mediafire.com/myfiles). Copy the link and paste it in [this Google Form](https://forms.gle/wMQ6UJy4QBs9EpJD7). Submit it and your script could be added to the scripts list.
 
-Before submitting a plugin, please make sure that your code is well-documented and adheres to the best practices for plugin development. 
+Before submitting, please make sure that your code works fine. 
 
 ## License
 
