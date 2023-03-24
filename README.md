@@ -15,13 +15,14 @@ To install Tampermonkey, simply visit the following link and follow the instruct
   </a>
 </div>
 
+
 Once you have installed Tampermonkey, you can browse through the available plugins in this repository and install any that you find useful.
 
 ## Contributing
 
 If you have created a plugin for Smartschool that you would like to share, comment in this github and paste your file there.
 
-Before submitting a pull request, please make sure that your code is well-documented and adheres to the best practices for plugin development. 
+Before submitting a plugin, please make sure that your code is well-documented and adheres to the best practices for plugin development. 
 
 ## License
 
@@ -29,4 +30,4 @@ All plugins in this repository are licensed under the MIT License. This means th
 
 ## Support
 
-If you encounter any issues with any of the plugins in this repository, please feel free to open an issue in the repository's issue tracker. We will do our best to address any issues in a timely manner.
+If you encounter any issues with any of the plugins in this repository, please feel free to open an issue in the repository's issue tracker. I will do my best to address any issues in a timely manner.
