@@ -19,7 +19,7 @@ Once you have installed Tampermonkey, you can browse through the available plugi
 
 ## Contributing
 
-If you have created a plugin that you would like to share with the community, we encourage you to contribute it to this repository. To contribute, simply fork this repository, make your changes, and submit a pull request.
+If you have created a plugin for Smartschool that you would like to share, comment in this github and paste your file there.
 
 Before submitting a pull request, please make sure that your code is well-documented and adheres to the best practices for plugin development. 
 
