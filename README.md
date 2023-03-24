@@ -20,7 +20,7 @@ Once you have installed Tampermonkey, you can browse through the available plugi
 
 ## Contributing
 
-If you have created a plugin for Smartschool that you would like to share, comment in this github and paste your file there.
+If you have created a plugin for Smartschool that you would like to share, .
 
 Before submitting a plugin, please make sure that your code is well-documented and adheres to the best practices for plugin development. 
 
