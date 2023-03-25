@@ -1,6 +1,6 @@
 # Smartschool Plugins
 
-Welcome to the Smartschool Plugins repository! This repository contains a collection of user-created plugins that can be used to enhance your experience with the Smartschool education platform.
+Welcome to the Smartschool Plugins Github page! This page contains a collection of user-created plugins that can be used to enhance your experience with the Smartschool education platform.
 
 ## Getting Started
 
