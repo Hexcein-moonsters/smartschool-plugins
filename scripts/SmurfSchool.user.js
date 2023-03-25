@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Backup SmurfSchool
+// @name         SmurfSchool
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  This is the unobcufated version of SmurfSchool
