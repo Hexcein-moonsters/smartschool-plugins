@@ -19,7 +19,7 @@ To install Tampermonkey, simply visit the following link.
 Once you have installed Tampermonkey, you can click any of the following links that you find useful to install them.
 
 ## Links
-[Smartschool autofill login data](https://github.com/uwugirl69/smartschool-plugins/raw/main/scripts/Autofill%20Smartschool%20login.user.js)
+[Autofill login data](https://github.com/uwugirl69/smartschool-plugins/raw/main/scripts/Autofill%20Smartschool%20login.user.js)
 
 [Smurfschool](https://github.com/uwugirl69/smartschool-plugins/raw/main/scripts/SmurfSchool.user.js)
 
