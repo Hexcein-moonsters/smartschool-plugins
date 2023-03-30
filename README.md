@@ -14,7 +14,6 @@ To install Tampermonkey, simply visit the following link.
     <img src="https://images.sftcdn.net/images/t_app-logo-xl,f_auto,dpr_2/p/a6fb70ec-ab0b-471f-adf4-d1110724a4db/1174036643/tampermonkey-icon.png" alt="Tampermonkey Logo" width="100" height="100">
   </a>
 </div>
-![alt text](img/logo.svg)
 
 Once you have installed Tampermonkey, you can click any of the following links that you find useful to install them.
 
