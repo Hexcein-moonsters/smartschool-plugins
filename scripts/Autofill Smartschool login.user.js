@@ -13,8 +13,8 @@ function fillall() {
     const newDivElement = "<h2 id='resettext' style='color:#FF0000;margin:auto;'>Press the reset button to change login data (if wrong).</h2><button id='reset' style='margin: auto;'>Reset login data</button>";
     parentElement.insertAdjacentHTML('beforebegin', newDivElement);
 
-    let username = localStorage.getItem("Username");
-    let password = localStorage.getItem("Password");
+    let username = localStorage.getItem("savedUsername");
+    let password = localStorage.getItem("savedPassword");
     function typeshit() {
         function typeString(string) {
             let i = 0;
@@ -59,7 +59,8 @@ function fillall() {
     typeshit();
 
     let totalDelay = (username.length + password.length) * 50;
-    setTimeout(function() {
+    setInterval(checkIfCorrect, totalDelay + 100);
+    function checkIfCorrect() {
         const usern = document.getElementById('login_form__username');
         if (usern.value === username) {
             // the values match
@@ -69,32 +70,32 @@ function fillall() {
                 // the values match
                 console.log('correct password')
                 const button = document.querySelector('button.smscButton.blue[type="submit"]');
-                let totalDelay = (username.length + password.length) * 50;
                 button.click();
                 localStorage.setItem("ShouldGoTo", 'https://lyceumgent.smartschool.be/planner/main/user/512_18545_0/');
 
             } else {
                 // the values do not match
                 console.log('wrong password')
-                typeshit();
+                passw.value = password;
+                checkIfCorrect();
             }
 
         } else {
             // the values do not match
             console.log('wrong username')
-            typeshit();
+            usern.value = username;
+            checkIfCorrect();
         }
-    }, totalDelay + 100);
+    };
 }
-
-function checkfordata() {
+function getDataOrFill() {
     const button = document.querySelector('button.smscButton.blue[type="submit"]');
-    if (!localStorage.getItem("Username") || !localStorage.getItem("Password")) {
+    if (!localStorage.getItem("savedUsername") || !localStorage.getItem("savedPassword")) {
         const parent = document.querySelector('.login-app__form');
         const newDiv = "<h3 style='color:#FF0000;'>Fill in your login data that the bot should repeat.</h3>";
         parent.insertAdjacentHTML('beforebegin', newDiv);
     }
-    if (!localStorage.getItem("Username") || !localStorage.getItem("Password")) {
+    if (!localStorage.getItem("savedUsername") || !localStorage.getItem("savedPassword")) {
         // the values of Username and Password are not set, so run the code
         button.addEventListener("click", function(event) {
             event.preventDefault(); // prevent the default behavior of the button
@@ -105,8 +106,8 @@ function checkfordata() {
          Username: ${filleduser.value}
          Password: ${filledpass.value}`)) {
                 // User clicked "OK"
-                localStorage.setItem("Username", filleduser.value);
-                localStorage.setItem("Password", filledpass.value);
+                localStorage.setItem("savedUsername", filleduser.value);
+                localStorage.setItem("savedPassword", filledpass.value);
                 location.reload();
             } else {
                 // User clicked "Cancel"
@@ -119,7 +120,7 @@ function checkfordata() {
 
     }
 }
-checkfordata()
+getDataOrFill()
 
 const reset = document.getElementById('reset');
 reset.addEventListener("click", function(event) {
@@ -127,8 +128,16 @@ reset.addEventListener("click", function(event) {
     user.value = '';
     const pass = document.getElementById('login_form__password');
     pass.value = '';
-    localStorage.removeItem("Username");
-    localStorage.removeItem("Password");
+    localStorage.removeItem("savedUsername");
+    localStorage.removeItem("savedPassword");
     location.reload();
     alert('login data has been reset!')
 });
+
+const parentElement = document.querySelector('.login-app__form');
+const errorElement = "<div id=errorElementTest><h3 style='color:#FF0000;'>Test</h3>";
+parentElement.insertAdjacentHTML('beforebegin', errorElement);
+const errorElementTest = document.getElementById('errorElementTest');
+setTimeout(function() {
+    errorElementTest.innerHTML += ``;
+}, 100);
