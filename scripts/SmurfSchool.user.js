@@ -1,197 +1,243 @@
 // ==UserScript==
-// @name         SmurfSchool
+// @name         SmurfSchoolbetter/manually2
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @icon         https://static1.smart-school.net/smsc/svg/favicon/favicon.svg
+// @version      0.8.3
 // @description  This is the unobcufated version of SmurfSchool
-// @author       You
+// @author       ProRobinH4cker
 // @match        https://*.smartschool.be/*
-// @grant        none
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_deleteValue
+// @run-at       document-end
 // ==/UserScript==
 
-localStorage.setItem("secretCodeEntered", "true");
-if (localStorage.getItem("secretCodeEntered") !== "true") {
-    var passwordBox = document.createElement("input");
-    // Get the password element
-    var passwordbox = document.getElementById("input");
-    // Set focus on the password box
-    passwordBox.setAttribute("type", "password");
-    passwordBox.setAttribute("id", "secretCode");
-    document.body.appendChild(passwordBox);
-    passwordBox.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            if (passwordBox.value === "Ikhouvanmannen!") {
-                localStorage.setItem("secretCodeEntered", "true");
-                passwordBox.remove();
-                location.reload();
-            } else {
-                alert("Incorrect secret code.");
-                location.reload();
-            }
-        }
-    });
-} else {
-    if (typeof localStorage.getItem("ShouldGoTo") !== "undefined" && localStorage.getItem("ShouldGoTo") !== null) {
-    // execute your code here
-    window.location.href = localStorage.getItem("ShouldGoTo");
-    localStorage.removeItem("ShouldGoTo");
+if (typeof GM_getValue("ShouldGoTo") !== "undefined" && GM_getValue("ShouldGoTo") !== null) {
+    window.location.href = GM_getValue("ShouldGoTo");
+    console.log(GM_getValue("ShouldGoTo"))
+    GM_deleteValue("ShouldGoTo");
 }
-    var _0x3551 = ["top bar go rainbow please!!!", "js-btn-go topnav__btn", "getElementsByClassName", "removeChild", "parentNode", "topnav", "hue", "backgroundColor", "style", "hsl(", ", 100%, 50%)", ", 100%, 40%)", "getTime", "setTime", "expires=", "toUTCString", "cookie", "=", ";", ";path=/", "split", "length", "substring", "charAt", " ", "indexOf", "", "AND ITS NAME IS PLANNER!!!", "a", "createElement", "href", "https://lyceumgent.smartschool.be/planner/main/user/512_18545_0/", "setAttribute", "class", "js-btn-messages topnav__btn", "innerHTML", "Planner", "appendChild", "children", "previousElementSibling", "insertBefore", "aight am", "username", "No username (Type the word 'change')", "span", "getElementsByTagName", "hlp-vert-box", "usericon", "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg", "img", "src", "onload", "onerror", "keydown", "key", "change", "endsWith", "Enter your new username:", "Enter your new user icon URL:", "addEventListener", "header__avatar js-header-avatar", "remove"];
-    (function () {
-        ("top bar go rainbow please!!!");
-        var _0xc712x1 = ["js-btn-go topnav__btn", "getElementsByClassName", "removeChild", "parentNode", "topnav", "hue", "backgroundColor", "style", "hsl(", ", 100%, 50%)", ", 100%, 40%)", "getTime", "setTime", "expires=", "toUTCString", "cookie", "=", ";", ";path=/", "split", "length", "substring", "charAt", " ", "indexOf", ""];
-        let _0xc712x2 = document.getElementsByClassName("js-btn-go topnav__btn")[0];
-        _0xc712x2.parentNode.removeChild(_0xc712x2);
-        let _0xc712x3 = document.getElementsByClassName("topnav")[0];
-        let _0xc712x4 = parseFloat(getCookie("hue")) || 0;
-        if (isNaN(_0xc712x4)) {
-            _0xc712x4 = 0;
+(function() {
+    ("top bar go rainbow please!!!");
+    let topnav_go_button = document.getElementsByClassName("js-btn-go topnav__btn")[0];
+    topnav_go_button.parentNode.removeChild(topnav_go_button);
+    let topnavElement = document.getElementsByClassName("topnav")[0];
+    let hueValue = parseFloat(getCookie("hue")) || 0;
+    if (isNaN(hueValue)) {
+        hueValue = 0;
+    };
+    topnavElement.style.backgroundColor = `hsl(${hueValue}, 100%, 50%)`;
+    function incrementAndSetHueValue(newHueValue) {
+        if (typeof newHueValue === 'string' && newHueValue.toLowerCase() === 'rainbow') {
+            hueValue = (hueValue + 0.5) % 360;
+        } else if (typeof newHueValue === 'string' && newHueValue.toLowerCase() === 'slider') {
+            hueValue = updateSlider()
+        } else if (typeof newHueValue === 'number') {
+            hueValue = newHueValue;
         }
-        ;
-        _0xc712x3.style.backgroundColor = `${""}${"hsl("}${""}${_0xc712x4}${""}${", 100%, 50%)"}${""}`;
-        function _0xc712x5() {
-            _0xc712x4 = (_0xc712x4 + 0.5) % 360;
-            _0xc712x3.style.backgroundColor = `${""}${"hsl("}${""}${_0xc712x4}${""}${", 100%, 40%)"}${""}`;
-            setCookie("hue", _0xc712x4);
-        }
-        setInterval(_0xc712x5, 7.5);
-        function setCookie(_0xc712x7, _0xc712x8) {
-            var _0xc712x9 = new Date;
-            _0xc712x9.setTime(_0xc712x9.getTime() + 31536e6);
-            var _0xc712xa = "expires=" + _0xc712x9.toUTCString();
-            document.cookie = _0xc712x7 + "=" + _0xc712x8 + ";" + _0xc712xa + ";path=/";
-        }
-        function getCookie(_0xc712x7) {
-            var _0xc712xc = _0xc712x7 + "=";
-            var _0xc712xd = decodeURIComponent(document.cookie);
-            var _0xc712xe = _0xc712xd.split(";");
-            for (var _0xc712xf = 0; _0xc712xf < _0xc712xe.length; _0xc712xf++) {
-                var _0xc712x10 = _0xc712xe[_0xc712xf];
-                while (_0xc712x10.charAt(0) == " ") {
-                    _0xc712x10 = _0xc712x10.substring(1);
-                }
-                ;
-                if (_0xc712x10.indexOf(_0xc712xc) == 0) {
-                    return _0xc712x10.substring(_0xc712xc.length, _0xc712x10.length);
-                }
-            }
-            ;
-            return "";
-        }
-    }());
-    var _0xf576 = ["getTime", "setTime", "expires=", "toUTCString", "cookie", "=", ";", ";path=/", "split", "length", "substring", "charAt", " ", "indexOf", ""];
-    function setCookie(_0xc712x12, _0xc712x13) {
-        var _0xc712x14 = new Date;
-        _0xc712x14.setTime(_0xc712x14.getTime() + 31536e6);
-        var _0xc712x15 = "expires=" + _0xc712x14.toUTCString();
-        document.cookie = _0xc712x12 + "=" + _0xc712x13 + ";" + _0xc712x15 + ";path=/";
+        topnavElement.style.backgroundColor = `hsl(${hueValue}, 100%, 40%)`;
+        setCookie("hue", hueValue);
     }
-    function getCookie(_0xc712x12) {
-        var _0xc712x16 = _0xc712x12 + "=";
-        var _0xc712x17 = decodeURIComponent(document.cookie);
-        var _0xc712x18 = _0xc712x17.split(";");
-        for (var _0xc712x19 = 0; _0xc712x19 < _0xc712x18.length; _0xc712x19++) {
-            var _0xc712x1a = _0xc712x18[_0xc712x19];
-            while (_0xc712x1a.charAt(0) == " ") {
-                _0xc712x1a = _0xc712x1a.substring(1);
+    function updateSlider() {
+        var value = sliderID.value;
+        return value;
+    }
+    setInterval(incrementAndSetHueValue, 7.5, 'slider'); //miliseconds
+    function setCookie(cookieName, value) {
+        var _0xc712x9 = new Date;
+        _0xc712x9.setTime(_0xc712x9.getTime() + 31536e6); //31536e6 is one year
+        var _0xc712xa = "expires=" + _0xc712x9.toUTCString();
+        document.cookie = cookieName + "=" + value + ";" + _0xc712xa + ";path=/";
+    }
+
+    function getCookie(cookieName) {
+        var cookievalue = cookieName + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var cookieAray = decodedCookie.split(";");
+        for (var i = 0; i < cookieAray.length; i++) {
+            var currentCookie = cookieAray[i];
+            while (currentCookie.charAt(0) == " ") {
+                currentCookie = currentCookie.substring(1);
+            };
+            if (currentCookie.indexOf(cookievalue) == 0) {
+                return currentCookie.substring(cookievalue.length, currentCookie.length);
             }
-            ;
-            if (_0xc712x1a.indexOf(_0xc712x16) == 0) {
-                return _0xc712x1a.substring(_0xc712x16.length, _0xc712x1a.length);
-            }
-        }
-        ;
+        };
         return "";
     }
-    (function () {
-        ("AND ITS NAME IS PLANNER!!!");
-        var _0xc712x1b = ["topnav", "getElementsByClassName", "a", "createElement", "href", "https://lyceumgent.smartschool.be/planner/main/user/512_18545_0/", "setAttribute", "class", "js-btn-messages topnav__btn", "innerHTML", "Planner", "appendChild", "children", "previousElementSibling", "insertBefore"];
-        let _0xc712x3 = document.getElementsByClassName("topnav")[0];
-        let _0xc712x1c = document.createElement("a");
-        _0xc712x1c.setAttribute("href", "https://lyceumgent.smartschool.be/planner/main/user/512_18545_0/");
-        _0xc712x1c.setAttribute("class", "js-btn-messages topnav__btn");
-        _0xc712x1c.innerHTML = "Planner";
-        _0xc712x3.appendChild(_0xc712x1c);
-        let _0xc712x1d = _0xc712x3.children;
-        let _0xc712x1e = _0xc712x1c;
-        for (let _0xc712x1f = 0; _0xc712x1f < 5; _0xc712x1f++) {
-            _0xc712x1e = _0xc712x1e.previousElementSibling;
-        }
-        ;
-        _0xc712x3.insertBefore(_0xc712x1c, _0xc712x1e);
-    }());
-    (function () {
-        ("aight am");
-        let _0xc712x20 = "";
-        let _0xc712x21 = getCookie("username") || "No username (Type the word 'change')";
-        let _0xc712x22 = document.getElementsByClassName("hlp-vert-box")[0].getElementsByTagName("span")[0];
-        if (!_0xc712x21) {
-            _0xc712x21 = "No username (Type the word 'change')";
-            setCookie("username", _0xc712x21);
-        }
-        ;
-        _0xc712x22.innerHTML = _0xc712x21;
-        let _0xc712x23 = getCookie("usericon") || "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg";
-        let _0xc712x24 = document.getElementsByTagName("img")[0];
-        let _0xc712x25 = new Image;
-        _0xc712x25.src = _0xc712x23;
-        _0xc712x25.onload = function () {
-            _0xc712x24.src = _0xc712x23;
+}());
+
+function setCookie(hueCookie, hue) {
+    var _0xc712x14 = new Date;
+    _0xc712x14.setTime(_0xc712x14.getTime() + 31536e6);
+    var cookieExpiry = "expires=" + _0xc712x14.toUTCString();
+    document.cookie = hueCookie + "=" + hue + ";" + cookieExpiry + ";path=/";
+}
+
+function getCookie(hueCookie) {
+    var cookieName = hueCookie + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookieAray = decodedCookie.split(";");
+    for (var i = 0; i < cookieAray.length; i++) {
+        var cookieValue = cookieAray[i];
+        while (cookieValue.charAt(0) == " ") {
+            cookieValue = cookieValue.substring(1);
         };
-        _0xc712x25.onerror = function () {
-            _0xc712x24.src = "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg";
-            setCookie("usericon", "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg");
-        };
-        document.addEventListener("keydown", _0xc712x26 => {
-            _0xc712x20 += _0xc712x26.key;
-            if (_0xc712x20.endsWith("change")) {
-                let _0xc712x27 = prompt("Enter your new username:");
-                if (!_0xc712x27) {
-                    _0xc712x27 = "No username (Type the word 'change')";
-                }
-                ;
-                _0xc712x22.innerHTML = _0xc712x27;
-                setCookie("username", _0xc712x27);
-                let _0xc712x28 = prompt("Enter your new user icon URL:");
-                _0xc712x25.src = _0xc712x28;
-                _0xc712x25.onload = function () {
-                    _0xc712x24.src = _0xc712x28;
-                    setCookie("usericon", _0xc712x28);
-                };
-                _0xc712x25.onerror = function () {
-                    _0xc712x24.src = "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg";
-                    setCookie("usericon", "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg");
-                };
-                _0xc712x20 = "";
-            }
-        });
-    }());
-    function setCookie2(_0xc712x2a, _0xc712x2b) {
-        var _0xc712x2c = new Date;
-        _0xc712x2c.setTime(_0xc712x2c.getTime() + 31536e6);
-        var _0xc712x2d = "expires=" + _0xc712x2c.toUTCString();
-        document.cookie = _0xc712x2a + "=" + _0xc712x2b + ";" + _0xc712x2d + ";path=/";
-    }
-    function getCookie2(_0xc712x2a) {
-        var _0xc712x2f = _0xc712x2a + "=";
-        var _0xc712x30 = decodeURIComponent(document.cookie);
-        var _0xc712x31 = _0xc712x30.split(";");
-        for (var _0xc712x1f = 0; _0xc712x1f < _0xc712x31.length; _0xc712x1f++) {
-            var _0xc712x32 = _0xc712x31[_0xc712x1f];
-            while (_0xc712x32.charAt(0) == " ") {
-                _0xc712x32 = _0xc712x32.substring(1);
-            }
-            ;
-            if (_0xc712x32.indexOf(_0xc712x2f) == 0) {
-                return _0xc712x32.substring(_0xc712x2f.length, _0xc712x32.length);
-            }
-        }
-        ;
-        return "";
-    }
-    window.onload = function () {
-        let _0xc712x33 = document.getElementsByClassName("header__avatar js-header-avatar")[0];
-        if (_0xc712x33) {
-            _0xc712x33.remove();
+        if (cookieValue.indexOf(cookieName) == 0) {
+            return cookieValue.substring(cookieName.length, cookieValue.length);
         }
     };
+    return "";
 }
+(function() {
+    ("AND ITS NAME IS PLANNER!!!");
+    let topnavElement = document.getElementsByClassName("topnav")[0];
+    let plannerElement = document.createElement("a");
+    plannerElement.setAttribute("href", "https://lyceumgent.smartschool.be/planner/main/user/512_18545_0/");
+    plannerElement.setAttribute("class", "js-btn-messages topnav__btn");
+    plannerElement.innerHTML = "Planner";
+    topnavElement.appendChild(plannerElement)
+    for (let i = 0; i < 5; i++) {
+        topnavElement.insertBefore(plannerElement, plannerElement.previousElementSibling);
+    };
+}());
+
+(function() {
+    ("aight am");
+    let keyBuffer = "";
+    let username = getCookie("username") || "No username (Type the word 'change')";
+    let usernameElement = document.getElementsByClassName("hlp-vert-box")[0].getElementsByTagName("span")[0];
+    if (!username) {
+        username = "No username (Type the word 'change')";
+        setCookie("username", username);
+    };
+    usernameElement.innerHTML = username;
+    let userIconUrl = getCookie("usericon") || "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg";
+    let userIconImageElement = document.getElementsByTagName("img")[0];
+    let tempImageElement = new Image;
+    tempImageElement.src = userIconUrl;
+    tempImageElement.onload = function() {
+        userIconImageElement.src = userIconUrl;
+    };
+    tempImageElement.onerror = function() {
+        userIconImageElement.src = "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg";
+        setCookie("usericon", "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg");
+    };
+    document.addEventListener("keydown", EventListener => {
+        keyBuffer += EventListener.key;
+        if (keyBuffer.endsWith("change")) {
+            let usernameValue = prompt("Enter your new username:");
+            if (!usernameValue) {
+                usernameValue = "No username (Type the word 'change')";
+            };
+            usernameElement.innerHTML = usernameValue;
+            setCookie("username", usernameValue);
+            let iconUrlValue = prompt("Enter your new user icon URL:");
+            tempImageElement.src = iconUrlValue;
+            tempImageElement.onload = function() {
+                userIconImageElement.src = iconUrlValue;
+                setCookie("usericon", iconUrlValue);
+            };
+            tempImageElement.onerror = function() {
+                userIconImageElement.src = "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg";
+                setCookie("usericon", "https://previews.123rf.com/images/asmati/asmati1701/asmati170100239/68986859-no-user-sign-illustration-.jpg");
+            };
+            keyBuffer = "";
+        }
+    });
+}());
+window.onload = function() {
+    let mainPfpElement = document.getElementsByClassName("header__avatar js-header-avatar")[0];
+    if (mainPfpElement) {
+        mainPfpElement.remove();
+    }
+    let pfpElement = document.getElementsByClassName("splitdetail__header__avatar js-splitdetail-header-avatar")[0];
+    if (pfpElement) {
+        pfpElement.remove();
+    }
+};
+let hueValue = parseFloat(getCookie("hue")) || 0;
+
+(function() {
+    'use strict';
+
+    // Create the modal element
+    const modal = document.createElement("div");
+    modal.id = "settingsModal";
+    modal.style.display = "none";
+    modal.style.position = "fixed";
+    modal.style.zIndex = "1";
+    modal.style.left = "0";
+    modal.style.top = "0";
+    modal.style.width = "100%";
+    modal.style.height = "100%";
+    modal.style.overflow = "auto";
+    modal.style.backgroundColor = "rgba(0,0,0,0.4)";
+
+    // Create the modal content
+    const modalContent = document.createElement("div");
+    modalContent.id = "settingsContent";
+    modalContent.style.backgroundColor = "#fefefe";
+    modalContent.style.margin = "15% auto";
+    modalContent.style.padding = "20px";
+    modalContent.style.border = "1px solid #888";
+    modalContent.style.width = "80%";
+
+    // Add the modal content to the modal element
+    modal.appendChild(modalContent);
+
+    // Create the "Settings" button
+    const settingsBtn = document.createElement("a");
+    settingsBtn.classList.add("topnav__menuitem", "topnav__menuitem--img");
+    settingsBtn.setAttribute("role", "menuitem");
+    settingsBtn.setAttribute("id", "settingsBtn");
+
+    const settingsImg = document.createElement("img");
+    settingsImg.src = "https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Settings_app_icon.png";
+    settingsImg.alt = "Profiel afbeelding";
+
+    const settingsSpan = document.createElement("span");
+    settingsSpan.textContent = "Settings";
+
+    // Add the image and span to the "Settings" button
+    settingsBtn.appendChild(settingsImg);
+    settingsBtn.appendChild(settingsSpan);
+
+    // Add the "Settings" button to the topnav menu
+    const topnavMenu = document.getElementsByClassName("topnav__menu")[0];
+    topnavMenu.appendChild(settingsBtn);
+
+    // Add an event listener to the "Settings" button to show the modal
+    settingsBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        modal.style.display = "block";
+    });
+
+    // Create the "Close" button
+    const closeBtn = document.createElement("button");
+    closeBtn.textContent = "Close";
+    closeBtn.id = "closeSettings";
+
+    // Add an event listener to the "Close" button to hide the modal
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+    var slider = document.createElement("input");
+    slider.setAttribute("id", "slider-id");
+    slider.type = "range";
+    slider.min = 0;
+    slider.max = 360;
+    slider.value = getCookie('hue');
+    slider.step = 1;
+    slider.style.width = "200px";
+
+    // Add the "Close" button to the modal content
+    modalContent.appendChild(closeBtn);
+    modalContent.appendChild(slider);
+    // Add your custom code here to modify the modal content and add event listeners
+
+    // Add the modal to the page
+    document.body.appendChild(modal);
+})();
+
+var sliderID = document.getElementById("slider-id");
